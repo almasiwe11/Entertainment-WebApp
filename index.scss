@@ -1,0 +1,41 @@
+@use "./src/Components//Header//Header.scss";
+@use "./src/Components//Search//Search.scss";
+@use "./src/Pages//Home//Home.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+:root {
+  --color-red: #fc4747;
+  --color-blue-bg: #10141e;
+  --color-blue-light: #5a698f;
+  --color-blue: #161d2f;
+  --color-white: white;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  color: var(--color-white);
+  background-color: var(--color-blue-bg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+@mixin center {
+  display: grid;
+  place-content: center;
+}
