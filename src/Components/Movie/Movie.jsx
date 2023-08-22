@@ -10,8 +10,8 @@ function Movie({ movie, trending }) {
   }
 
   let src;
-  if (trending) src = movie.thumbnail.trending.small;
-  if (!trending) src = movie.thumbnail.regular.small;
+  if (trending) src = movie.thumbnail.trending;
+  if (!trending) src = movie.thumbnail.regular;
   const { category, title, year, rating } = movie;
 
   function handleBookmark() {
@@ -28,7 +28,13 @@ function Movie({ movie, trending }) {
     <div className="movie">
       <div className={`movie__img-container `}>
         <div className={`${trending && "movie__img-overlay"}`}>
-          <img src={src} alt="Trending movie" />
+          <picture>
+            <source srcSet={src.large} media="(min-width:1024px)" />
+            {!trending && (
+              <source srcSet={src.medium} media="(min-width:768px)" />
+            )}
+            <img src={src.small} alt="Trending movie" />
+          </picture>
         </div>
         <div className="movie__bookmark" onClick={handleBookmark}>
           {isBookmarked ? <BookMarkFull /> : <BookMarkEmpty />}
