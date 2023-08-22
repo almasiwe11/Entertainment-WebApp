@@ -1,9 +1,8 @@
 .header {
   background-color: var(--color-blue);
-  height: 7vh;
-  display: flex;
-  align-items: center;
+
   &__container {
+    height: 7vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,23 +20,13 @@
     align-items: center;
 
     & img {
-      height: 2.2rem;
+      height: 60%;
       border-radius: 50%;
       border: 2px solid white;
 
       @media (min-width: 768px) {
-        height: 3.7rem;
+        height: 65%;
       }
-    }
-  }
-
-  &__logo {
-    transform: scale(0.85);
-  }
-
-  &__navigation {
-    & svg {
-      transform: scale(0.85);
     }
   }
 

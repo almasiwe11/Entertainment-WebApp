@@ -1,9 +1,0 @@
-.app {
-  @media (min-width: 1024px) {
-    display: flex;
-
-    & > * {
-      border: 3px solid;
-    }
-  }
-}
