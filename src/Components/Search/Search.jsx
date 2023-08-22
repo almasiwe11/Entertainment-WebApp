@@ -1,11 +1,13 @@
-function Search({ placeholder }) {
+function Search({ placeholder, setFind, find }) {
   return (
-    <div className="search">
+    <div className="search container">
       <MagnifyinGlass />
       <input
         type="text"
         className="search__input"
         placeholder={`Search for ${placeholder}`}
+        value={find}
+        onChange={(e) => setFind(e.target.value)}
       />
     </div>
   );

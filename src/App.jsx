@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MarkedProvider } from "./Hooks/Context";
 import Header from "./Components/Header/Header";
 import Movies from "./Pages/Movies/Movies";
 import Bookmarked from "./Pages/Bookmarked/Bookmarked";
@@ -12,15 +13,33 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Header />
-        <div className="container">
+        <MarkedProvider>
+          <Header />
           <Routes>
             <Route index element={<Home allMovies={allMovies} />} />
-            <Route path="movies" element={<Movies />} />
-            <Route path="tvseries" element={<TvSeries />} />
+            <Route
+              path="movies"
+              element={
+                <Movies
+                  movies={allMovies.filter(
+                    (movie) => movie.category === "Movie"
+                  )}
+                />
+              }
+            />
+            <Route
+              path="tvseries"
+              element={
+                <TvSeries
+                  movies={allMovies.filter(
+                    (movie) => movie.category === "TV Series"
+                  )}
+                />
+              }
+            />
             <Route path="bookmarked" element={<Bookmarked />} />
           </Routes>
-        </div>
+        </MarkedProvider>
       </BrowserRouter>
     </div>
   );

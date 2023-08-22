@@ -1,9 +1,14 @@
+/* eslint-disable react/prop-types */
+import Movie from "../../../../Components/Movie/Movie";
 function Trending({ moviesTrending }) {
-  console.log(moviesTrending);
   return (
     <div className="trending">
-      Trending
-      <img src="/assets/thumbnails/the-diary/regular/small.jpg" alt="" />
+      <h1>Trending</h1>
+      <div className="trending__movies">
+        {moviesTrending.map((trending) => (
+          <Movie movie={trending} key={trending.title} trending={true} />
+        ))}
+      </div>
     </div>
   );
 }

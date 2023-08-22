@@ -1,0 +1,25 @@
+.trending {
+  margin-left: 5%;
+  margin-top: 1.5rem;
+
+  &__movies {
+    display: flex;
+    height: 10rem;
+    gap: 1rem;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  & .movie {
+    height: 100%;
+    min-width: 16rem;
+  }
+
+  & h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+}

@@ -1,13 +1,16 @@
 @use "./src/Components//Header//Header.scss";
 @use "./src/Components//Search//Search.scss";
+@use "./src/Components//Movie//Movie.scss";
+@use "./src/Components//MovieList//MovieList.scss";
 @use "./src/Pages//Home//Home.scss";
-
+@use "./src/Pages/Home/Components/Trending/Trending.scss";
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 :root {
   --color-red: #fc4747;
   --color-blue-bg: #10141e;
   --color-blue-light: #5a698f;
   --color-blue: #161d2f;
+  --color-blue-transparent: rgba(22, 29, 47, 0.6);
   --color-white: white;
 }
 
@@ -15,6 +18,7 @@ body {
   font-family: "Outfit", sans-serif;
   color: var(--color-white);
   background-color: var(--color-blue-bg);
+  overflow-x: hidden;
 }
 
 * {
@@ -38,4 +42,24 @@ svg {
 @mixin center {
   display: grid;
   place-content: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+.bookmarked {
+  &__empty {
+    height: 20rem;
+    display: grid;
+    place-content: center;
+    font-size: 1.4rem;
+  }
+
+  &__title {
+    margin-top: 1.5rem;
+  }
 }

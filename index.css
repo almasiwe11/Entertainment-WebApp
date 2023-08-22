@@ -48,11 +48,124 @@ a.active svg path {
   font-size: 1rem;
 }
 
+.movie {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: relative;
+}
+.movie__details {
+  margin-top: 0.3rem;
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+.movie__details span {
+  font-weight: 300;
+}
+.movie__trending {
+  position: absolute;
+  bottom: 8%;
+  left: 8%;
+}
+.movie__category {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+.movie__img-overlay {
+  position: relative;
+}
+.movie__img-overlay::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+.movie__title {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.movie__img-container {
+  position: relative;
+}
+.movie__img-container img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.movie__bookmark {
+  color: white;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: grid;
+  place-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--color-blue-transparent);
+}
+.movie__bookmark svg {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.movieList {
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+}
+.movieList h2 {
+  margin-bottom: 1.5rem;
+}
+.movieList__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.notFound {
+  height: 20rem;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.trending {
+  margin-left: 5%;
+  margin-top: 1.5rem;
+}
+.trending__movies {
+  display: flex;
+  height: 10rem;
+  gap: 1rem;
+  overflow-x: auto;
+}
+.trending__movies::-webkit-scrollbar {
+  width: 0;
+}
+.trending .movie {
+  height: 100%;
+  min-width: 16rem;
+}
+.trending h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+}
+
 :root {
   --color-red: #fc4747;
   --color-blue-bg: #10141e;
   --color-blue-light: #5a698f;
   --color-blue: #161d2f;
+  --color-blue-transparent: rgba(22, 29, 47, 0.6);
   --color-white: white;
 }
 
@@ -60,6 +173,7 @@ body {
   font-family: "Outfit", sans-serif;
   color: var(--color-white);
   background-color: var(--color-blue-bg);
+  overflow-x: hidden;
 }
 
 * {
@@ -78,6 +192,23 @@ img,
 svg {
   display: block;
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+.bookmarked__empty {
+  height: 20rem;
+  display: grid;
+  place-content: center;
+  font-size: 1.4rem;
+}
+.bookmarked__title {
+  margin-top: 1.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */
