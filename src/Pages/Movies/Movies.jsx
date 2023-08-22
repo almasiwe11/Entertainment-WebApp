@@ -6,8 +6,9 @@ function Movies({ movies }) {
   const [find, setFind] = useState("");
   const filter = useSearch(movies, find);
   return (
-    <div className="container">
+    <div className="">
       <Search placeholder="movies" setFind={setFind} find={find} />
+      <h2 className="container tab">Movies</h2>
       <MovieList movies={filter} />
     </div>
   );

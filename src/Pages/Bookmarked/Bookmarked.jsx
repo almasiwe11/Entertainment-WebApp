@@ -19,13 +19,15 @@ function Bookmarked() {
         <>
           {movies.length > 0 && (
             <>
-              <h2 className="container bookmarked__title">Bookmarked Movies</h2>
+              <h2 className="container bookmarked__title tab">
+                Bookmarked Movies
+              </h2>
               <MovieList movies={movies} />
             </>
           )}
           {series.length > 0 && (
             <>
-              <h2 className="container bookmarked__title">
+              <h2 className="container bookmarked__title tab">
                 Bookmarked TV Series
               </h2>
               <MovieList movies={series} />

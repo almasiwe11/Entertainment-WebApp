@@ -58,8 +58,12 @@ h4 {
     place-content: center;
     font-size: 1.4rem;
   }
+}
 
-  &__title {
-    margin-top: 1.5rem;
+.tab {
+  margin-top: 1.4rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
   }
 }

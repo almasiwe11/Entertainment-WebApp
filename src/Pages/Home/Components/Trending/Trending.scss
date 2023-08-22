@@ -7,6 +7,9 @@
     height: 10rem;
     gap: 1rem;
     overflow-x: auto;
+    @media (min-width: 768px) {
+      height: 17rem;
+    }
 
     &::-webkit-scrollbar {
       width: 0;
@@ -16,6 +19,9 @@
   & .movie {
     height: 100%;
     min-width: 16rem;
+    @media (min-width: 768px) {
+      min-width: 30rem;
+    }
   }
 
   & h1 {

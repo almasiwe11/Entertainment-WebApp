@@ -8,6 +8,7 @@ function TvSeries({ movies }) {
   return (
     <div>
       <Search placeholder="TV series" setFind={setFind} find={find} />
+      <h2 className="container tab">TV Series</h2>
       <MovieList movies={filter} />
     </div>
   );
