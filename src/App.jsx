@@ -16,7 +16,7 @@ function App() {
         <MarkedProvider>
           <Header />
           <Routes>
-            <Route index element={<Home allMovies={allMovies} />} />
+            <Route path="/" element={<Home allMovies={allMovies} />}></Route>
             <Route
               path="movies"
               element={

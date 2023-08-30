@@ -1,0 +1,7 @@
+.app {
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 7vw 89vw;
+    padding-left: 2.5vw;
+  }
+}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useMarked } from "../../Hooks/Context";
 function Movie({ movie, trending }) {
   const { bookmarked, setBookmarked } = useMarked();
+  const [isHovered, setIsHovered] = useState(false);
   // const [isBookmarked, setIsBookmarked] = useState(false);
   let isBookmarked = false;
   if (bookmarked.some((marked) => marked.title === movie.title)) {
@@ -27,9 +28,15 @@ function Movie({ movie, trending }) {
   return (
     <div className="movie">
       <div className={`movie__img-container `}>
-        <div className={`${trending && "movie__img-overlay"}`}>
-          <picture>
+        <div className={`${trending && "movie__img-overlay"} picture `}>
+          <picture className="">
             <source srcSet={src.large} media="(min-width:1024px)" />
+            <div className="picture__overlay">
+              <span>
+                <Play />
+              </span>
+              <h5 className="play"> Play</h5>
+            </div>
             {!trending && (
               <source srcSet={src.medium} media="(min-width:768px)" />
             )}
@@ -103,6 +110,17 @@ function TvCategory() {
         d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z"
         fill="#FFF"
         opacity=".75"
+      />
+    </svg>
+  );
+}
+
+function Play() {
+  return (
+    <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z"
+        fill="#FFF"
       />
     </svg>
   );

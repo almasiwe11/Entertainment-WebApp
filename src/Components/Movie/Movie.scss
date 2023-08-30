@@ -1,5 +1,4 @@
 .movie {
-  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,6 +24,10 @@
     position: absolute;
     bottom: 8%;
     left: 8%;
+
+    @media (min-width: 1024px) {
+      bottom: 12%;
+    }
   }
 
   &__trending &__title {
@@ -34,7 +37,7 @@
   }
 
   &__title {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.2rem;
     @media (min-width: 768px) {
       font-size: 1.4rem;
@@ -50,7 +53,7 @@
   &__img-overlay {
     position: relative;
 
-    &::before {
+    &::after {
       content: "";
       display: block;
       position: absolute;
@@ -69,6 +72,7 @@
       object-fit: cover;
       height: 100%;
       width: 100%;
+      border-radius: 9px;
     }
   }
 
@@ -81,12 +85,75 @@
     place-content: center;
     width: 2.4rem;
     height: 2.4rem;
+    cursor: pointer;
     border-radius: 50%;
     background-color: var(--color-blue-transparent);
 
     & svg {
       transform: scale(1.2);
       cursor: pointer;
+    }
+  }
+}
+
+.picture {
+  &__overlay {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      background-color: black;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:hover::before {
+      opacity: 0.2;
+    }
+
+    &__overlay {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      z-index: 4;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s ease-in-out;
+      opacity: 0;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0.6rem 1rem;
+      border-radius: 100rem;
+    }
+
+    &:hover &__overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.play {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  .movie {
+    &__details {
+      font-size: 0.9rem;
+    }
+
+    &__title {
+      font-size: 1.3rem;
     }
   }
 }

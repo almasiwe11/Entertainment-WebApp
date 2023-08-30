@@ -4,6 +4,7 @@
 @use "./src/Components//MovieList//MovieList.scss";
 @use "./src/Pages//Home//Home.scss";
 @use "./src/Pages/Home/Components/Trending/Trending.scss";
+@use "./src/App.scss";
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 :root {
   --color-red: #fc4747;
@@ -31,6 +32,12 @@ body {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 95%;
+  }
 }
 
 img,
