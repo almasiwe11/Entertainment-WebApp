@@ -141,7 +141,7 @@ a.active svg path {
 }
 @media (min-width: 1024px) {
   .movie__trending {
-    bottom: 12%;
+    bottom: 16%;
   }
 }
 @media (min-width: 768px) {
@@ -291,6 +291,7 @@ a.active svg path {
   margin-left: 5%;
   margin-top: 1.5rem;
   position: relative;
+  overflow: hidden;
 }
 .trending__movies {
   display: flex;
@@ -301,6 +302,12 @@ a.active svg path {
 @media (min-width: 768px) {
   .trending__movies {
     height: 17rem;
+  }
+}
+@media (max-width: 1024px) {
+  .trending__movies {
+    width: auto !important;
+    transform: translateX(0) !important;
   }
 }
 .trending__movies::-webkit-scrollbar {
@@ -336,6 +343,13 @@ a.active svg path {
   transition: 0.3s ease-in-out;
   cursor: pointer;
   padding: 8px;
+  display: none;
+}
+@media (min-width: 1024px) {
+  .leftArr,
+  .rightArr {
+    display: block;
+  }
 }
 
 .leftArr:hover,
